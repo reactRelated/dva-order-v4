@@ -30,8 +30,7 @@ export default {
       extraBabelPlugins: [
         "dva-hmr",
         "transform-runtime",
-        [
-          "import", {
+        ["import", {
             "libraryName": "antd",
             "style": true
           }
@@ -47,12 +46,17 @@ export default {
     production: {
       extraBabelPlugins: [
         "transform-runtime",
-        [
-          "import", {
+        ["import", {
             "libraryName": "antd",
             "style": true
+          },
+        ],
+        ["module-resolver", {
+          "root": ["./src"],
+          "alias": {
+            "utils": "./utils",
           }
-        ]
+        }]
       ]
     }
   },

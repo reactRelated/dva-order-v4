@@ -40,6 +40,8 @@ const Menus = ({ isNavbar,siderFold, darkTheme, handleClickNavMenu, navOpenKeys,
       )
     })
   }
+  console.log(menuTree)
+
   const menuItems = getMenus(menuTree, siderFold,isNavbar)
 
 

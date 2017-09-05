@@ -4,7 +4,6 @@ import {Router, Switch, Route, Redirect } from 'dva/router';
 import dynamic from 'dva/dynamic';
 import App from './routes/app'
 
-
 /*注册 Model*/
 /*const registerModel = (app, model) => {
     if (!(app._models.filter(m => m.namespace === model.namespace).length === 1)) {
@@ -82,18 +81,15 @@ function Routers({ history, app }) {
   return (
     <Router history={history}>
       <Switch>
-        <Route exact path='/login' component={login} />
-
         <App>
+          <Route exact path='/login' component={login} />
           <Route exact path='/' render={() => (
             <Redirect to='/dashboard' />
           )} />
           <Route exact path='/dashboard' component={dashboard} />
-          <Route exact  path='/error'  component={error} />
-
-          <Redirect to="/error" />
+          {/*<Route exact  path='/error'  component={error} />*/}
+          {/*<Redirect to='/error' />*/}
         </App>
-        <Redirect to="/login" />
       </Switch>
     </Router>
   );

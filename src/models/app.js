@@ -37,7 +37,7 @@ export default {
         id: 1,
         icon: 'laptop',
         name: 'Dashboard',
-        router: '/dashboard',
+        route: '/dashboard',
       },
     ],
     menuPopoverVisible: false,

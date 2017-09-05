@@ -34,6 +34,7 @@ let database = [
     bpid: '1',
     name: '游客无权访问',
     icon: 'camera-o',
+    route: '/UIElement/iconfont',
   },
 /*  {
     id: '41',

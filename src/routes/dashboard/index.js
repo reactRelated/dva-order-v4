@@ -28,6 +28,9 @@ function Dashboard ({ dashboard, loading }) {
 
   return (
     <div>
+      {console.log("loading.models.dashboard start")}
+      {console.log(loading.models.dashboard)}
+      {console.log("loading.models.dashboard end")}
       <Loader spinning={loading.models.dashboard} />
       <Row gutter={24}>
         {/*{numberCards}*/}

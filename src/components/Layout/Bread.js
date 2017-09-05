@@ -38,7 +38,6 @@ const Bread = ({ menu }) => {
   } else {
     getPathArray(current)
   }
-
   // 递归查找父级
   const breads = pathArray.map((item, key) => {
     const content = (
