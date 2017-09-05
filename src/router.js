@@ -89,11 +89,11 @@ function Routers({ history, app }) {
             <Redirect to='/dashboard' />
           )} />
           <Route exact path='/dashboard' component={dashboard} />
+          <Route exact  path='/error'  component={error} />
 
           <Redirect to="/error" />
-          <Route exact  path='/error'  component={error} />
         </App>
-
+        <Redirect to="/login" />
       </Switch>
     </Router>
   );

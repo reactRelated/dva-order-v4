@@ -7,7 +7,7 @@ import config from 'utils/config'
 import { EnumRoleType } from 'utils/enums'
 import { query, logout } from '../services/app'
 import * as menusService from '../services/menus'
-
+console.log(routerRedux)
 const { prefix } = config
 
 const contentHeight=function (ddc) {
