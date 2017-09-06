@@ -109,10 +109,10 @@ const App = ({ children, dispatch, app, loading, location }) => {
                     </aside>
                 <div className={styles.main}>
                     <Header {...headerProps} />
-                    {/*<Bread {...breadProps} />*/}
+                    <Bread {...breadProps} />
                     <div className={styles.container}>
                         <div className={styles.content} style={{minHeight:contentHeight}}>
-                          {hasPermission ? children :  <Route exact path='/error'  component={Error} />}
+                          {children}
                         </div>
                     </div>
                     <Footer />
