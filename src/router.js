@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import {Router, Switch, Route, Redirect } from 'dva/router';
 import dynamic from 'dva/dynamic';
 import App from './routes/app'
-import PrimaryLayout from './PrimaryLayout'
+// import PrimaryLayout from './PrimaryLayout'
 /*注册 Model*/
 /*const registerModel = (app, model) => {
     if (!(app._models.filter(m => m.namespace === model.namespace).length === 1)) {
@@ -56,7 +56,6 @@ const Routers = function ({ history, app }) {
 }*/
 
 function Routers({ history, app }) {
-  console.log(app)
   const dashboard  = dynamic({
     app,
     models: () => [
@@ -81,16 +80,16 @@ function Routers({ history, app }) {
   return (
     <Router history={history}>
       <Switch>
-        <Route exact path='/login' component={login} />
-        <App component={PrimaryLayout} />
-        {/*<App>
-          <Route exact path='/' render={() => (
-            <Redirect to='/dashboard' />
-          )} />
-          <Route exact path='/dashboard' component={dashboard} />
-          <Route exact path='/error'  component={error} />
-
-        </App>*/}
+        <App>
+          <Switch>
+            <Route exact path='/login' component={login} />
+            <Route exact path='/' render={() => (
+              <Redirect to='/dashboard' />
+            )} />
+            <Route exact path='/dashboard' component={dashboard} />
+            <Route component={error} />
+          </Switch>
+        </App>
       </Switch>
     </Router>
   );

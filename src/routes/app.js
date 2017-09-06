@@ -22,27 +22,22 @@ const App = ({ children, dispatch, app, loading, location }) => {
 
 
   const { user, siderFold, darkTheme, isNavbar, menuPopoverVisible, navOpenKeys, menu, permissions,contentHeight } = app
-  console.log(app)
+  console.log(children)
   const dashboard  = dynamic({
-    app,
     models: () => [
       import('../models/dashboard'),
     ],
-    component: () => import('../routes/dashboard/'),
+    component: () => import('./dashboard/'),
   });
   let { pathname } = location
-  console.log(app)
   // startsWith 表示参数字符串是否在源字符串的头部
   pathname = pathname.startsWith('/') ? pathname : `/${pathname}`
-  console.log(pathname)
   const { iconFontJS, iconFontCSS, logo } = config
   /*pathToRegexp 将路径转换成  Reg.exec() 匹配路由获得当前的 菜单*/
   const current = menu.filter(item =>pathToRegexp(item.route || '').exec(pathname))
   /* visit为菜单权限id，includes判断 当前current[0].id是否 存在于visit（当前菜单权限），检查权限 */
   const hasPermission = current.length ? permissions.visit.includes(current[0].id) : false
   const href = window.location.href
-  console.log("hasPermission")
-  console.log(permissions.visit )
   //loading 进度条
   if (lastHref !== href) {
     NProgress.start()
@@ -117,7 +112,7 @@ const App = ({ children, dispatch, app, loading, location }) => {
                     {/*<Bread {...breadProps} />*/}
                     <div className={styles.container}>
                         <div className={styles.content} style={{minHeight:contentHeight}}>
-                            {hasPermission ? <Route exact path='/dashboard' component={dashboard} /> : <Route exact path='/error' />}
+                          {hasPermission ? children :  <Route exact path='/error'  component={Error} />}
                         </div>
                     </div>
                     <Footer />
