@@ -24,7 +24,6 @@ function Dashboard ({ dashboard, loading }) {
  /* const numberCards = numbers.map((item, key) => (<Col key={key} lg={6} md={12}>
     <NumberCard {...item} />
   </Col>))*/
- console.log(area)
 
   return (
     <div>

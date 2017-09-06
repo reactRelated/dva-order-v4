@@ -39,6 +39,7 @@ export default {
           "root": ["./src"],
           "alias": {
             "utils": "./utils",
+            "routes": "./routes",
           }
         }]
       ]

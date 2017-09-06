@@ -9,9 +9,6 @@ const ERROR_MSG_DURATION = 3; // 3 秒
 // 1. Initialize
 // const app = dva();
  const app = dva({
-     ...createLoading({
-         effects: true,
-     }),
      history: createHistory(),
      onError (error) {
          message.error(error.message,ERROR_MSG_DURATION)
@@ -19,11 +16,12 @@ const ERROR_MSG_DURATION = 3; // 3 秒
  });
 
 // 2. Plugins
-// app.use({});
+app.use(createLoading({
+  effects: true,
+}));
 
 // 3. Model
-// app.model(require('./models/example'));
-app.model(require('./models/app'))
+// app.model(require('./models/app'))
 // 4. Router
 app.router(require('./router'));
 
