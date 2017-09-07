@@ -111,9 +111,9 @@ const App = ({ children, dispatch, app, loading, location }) => {
                     <Header {...headerProps} />
                     <Bread {...breadProps} />
                     <div className={styles.container}>
-                        <div className={styles.content} style={{minHeight:contentHeight}}>
+                        <main className={styles.content} style={{minHeight:contentHeight}}>
                           {children}
-                        </div>
+                        </main>
                     </div>
                     <Footer />
                 </div>
