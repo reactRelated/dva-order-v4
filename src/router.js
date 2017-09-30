@@ -79,6 +79,7 @@ function Routers({ history, app }) {
 
   return (
     <Router history={history}>
+      <Switch>
         <App>
           <Switch>
             <Route exact path='/login' component={login} />
@@ -89,6 +90,7 @@ function Routers({ history, app }) {
             <Route component={error} />
           </Switch>
         </App>
+      </Switch>
     </Router>
   );
 }

@@ -4,7 +4,7 @@ import { connect } from 'dva'
 import { Row, Col, Card } from 'antd'
 import { color } from '../../utils'
 import { Loader } from '../../components'
-import {  User,AreaChart } from './components'
+import {  User,AreaChart,Hello } from './components'
 import styles from './index.less'
 
 
@@ -31,6 +31,7 @@ function Dashboard ({ dashboard, loading }) {
       {console.log(loading.models.dashboard)}
       {console.log("loading.models.dashboard end")}
       <Loader spinning={loading.models.dashboard} />
+      <Hello compiler="1" framework="2"/>
       <Row gutter={24}>
         {/*{numberCards}*/}
         <Col lg={16} md={24}>
